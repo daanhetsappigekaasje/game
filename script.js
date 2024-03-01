@@ -9,11 +9,15 @@
 "use strict"
 
 /* border om de auto in de shop*/
-let carBorder
+let carBorder;
+let buttonNext;
+let buttonNextLine;
+
 
 function preload(){
-  
-  carBorder = createImg('carborder.png');
+  buttonNext = loadImage('buttonnext.png');
+  buttonNextLine = loadImage('buttonnextline.png');
+  carBorder = loadImage('carborder.png');
 }
 
 function setup() {
@@ -22,14 +26,12 @@ function setup() {
 
 function draw() {
   background(168,230,29);
-  carBorder.position(720 ,80)
-  carBorder.size(800,800)
+  image(carBorder, 24, 80, 400, 400);
+  image(buttonNextLine, 1200, 384.375, 100, 15.625);
+  image(buttonNext, 1200, 280, 100, 400);
+
+  if(mouseX > 1200, mouseX < 1300 , mouseY > 280, mouseY < 680)
 }
 
 /* car in de shop */
 
-let car
-
-function preload(){
-
-}
