@@ -12,12 +12,14 @@
 let carBorder;
 let buttonNext;
 let buttonNextLine;
+let car;
 
 
 function preload(){
   buttonNext = loadImage('buttonnext.png');
   buttonNextLine = loadImage('buttonnextline.png');
   carBorder = loadImage('carborder.png');
+  car = loadImage ('autooranje.png');
 }
 
 function setup() {
@@ -27,11 +29,17 @@ function setup() {
 function draw() {
   background(168,230,29);
   image(carBorder, 24, 80, 400, 400);
+  image (car, 30, 80, 400, 400);
   image(buttonNextLine, 1200, 384.375, 100, 15.625);
-  image(buttonNext, 1200, 280, 100, 400);
-
-  if(mouseX > 1200, mouseX < 1300 , mouseY > 280, mouseY < 680)
+  image(buttonNext, 1200, 280, 100, 400); 
 }
 
-/* car in de shop */
+  
+
+
+
+
+ 
+
+
 
