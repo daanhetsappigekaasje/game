@@ -12,14 +12,18 @@
 let carBorder;
 let buttonNext;
 let buttonNextLine;
-let car;
+let raceCarGreenWhite;
+let menuButton;
+let menuButtonLine;
 
 
 function preload(){
   buttonNext = loadImage('buttonnext.png');
   buttonNextLine = loadImage('buttonnextline.png');
+  menuButton = loadImage('MenuButton.png');
+  menuButtonLine = loadImage ('MenuButtonLine.png');
   carBorder = loadImage('carborder.png');
-  car = loadImage ('autooranje.png');
+  raceCarGreenWhite = loadImage ('raceCarGreenWhite.png');
 }
 
 function setup() {
@@ -28,8 +32,13 @@ function setup() {
 
 function draw() {
   background(168,230,29);
-  image(carBorder, 24, 80, 400, 400);
-  image (car, 30, 80, 400, 400);
+  image(carBorder, 75, 280, 300, 300);
+  image(carBorder, 450, 280, 300, 300);
+  image(carBorder, 825, 280, 300, 300);
+  image(menuButton, 75, 600, 300, 80);
+  image(menuButton, 450, 600, 300, 80);
+  image(menuButton, 825, 600, 300, 80);
+  image (raceCarGreenWhite, 173, 342, 104, 176 );
   image(buttonNextLine, 1200, 384.375, 100, 15.625);
   image(buttonNext, 1200, 280, 100, 400); 
 }
