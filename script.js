@@ -17,11 +17,8 @@ let raceCarBlueWhite;
 let raceCarPinkWhite;
 let menuButton;
 let menuButtonLine;
-let buttonHeight1 = 600;
-let buttonHeight2 = 600;
-let buttonHeight3 = 600;
-var purchaseTekst1 = 'Purchase';
-
+var buttonHeight = [600,600,600];
+var purchaseTekst = ['Purchase', 'Purchase', 'Purchase']
 
 function preload(){
   buttonNext = loadImage('buttonnext.png');
@@ -49,74 +46,74 @@ function draw() {
   
   if(mouseX > 75 && mouseX < 375){
     if (mouseY > 600 && mouseY < 680) {
-      buttonHeight1 = 595;
+      buttonHeight[0] = 595;
     }else{
-      buttonHeight1 = 600;
+      buttonHeight[0] = 600;
     }
   }else {
-    buttonHeight1 = 600;
+    buttonHeight[0] = 600;
   }
 
   if(mouseX > 450 && mouseX < 750){
     if (mouseY > 600 && mouseY < 680) {
-      buttonHeight2 = 595;
+      buttonHeight[1] = 595;
     }else{
-      buttonHeight2 = 600;
+      buttonHeight[1] = 600;
     }
   }else {
-    buttonHeight2 = 600
+    buttonHeight[1] = 600
   }
 
   if(mouseX > 825 && mouseX < 1125){
     if (mouseY > 600 && mouseY < 680) {
-      buttonHeight3 = 595;
+      buttonHeight[2] = 595;
     }else{
-      buttonHeight3 = 600;
+      buttonHeight[2] = 600;
     }
   }else {
-    buttonHeight3 = 600
+    buttonHeight[2] = 600
   }
 
   if(mouseX > 75 && mouseX < 375){
     if (mouseY > 600 && mouseY < 680) {
       if (mouseIsPressed) {
-        purchaseTekst1 = 'Purchased';
+        purchaseTekst[0] = 'Purchased';
       }else{
-        purchaseTekst1 = 'Purchase';
+        purchaseTekst[0] = 'Purchase';
       }
     }else {
-      purchaseTekst1 = 'Purchase';
+      purchaseTekst[0] = 'Purchase';
     }
   } else {
-    purchaseTekst1 = 'Purchase';
+    purchaseTekst[0] = 'Purchase';
   }
 
   if(mouseX > 450 && mouseX < 750){
     if (mouseY > 600 && mouseY < 680) {
       if (mouseIsPressed) {
-        purchaseTekst2 = 500;
+        purchaseTekst[1] = 'Purchased';
       }else{
-        purchaseTekst2 = 600;
+        purchaseTekst[1] = 'Purchase';
       }
     }else {
-      purchaseTekst2 = 600
+      purchaseTekst[1] = 'Purchase';
     }
   } else {
-    purchaseTekst2 = 600
+    purchaseTekst[1] = 'Purchase';
   }
 
   if(mouseX > 825 && mouseX < 1125){
     if (mouseY > 600 && mouseY < 680) {
       if (mouseIsPressed) {
-        buttonHeight3 = 500;
+        purchaseTekst[2] = 'Purchased'
       }else{
-        buttonHeight3 = 600;
+        purchaseTekst[2] = 'Purchase'
       }
     }else {
-      buttonHeight3 = 600
+      purchaseTekst[2] = 'Purchase'
     }
   } else {
-    buttonHeight3 = 600
+    purchaseTekst[2] = 'Purchase'
   }
 
   image(carBorder, 75, 280, 300, 300);
@@ -127,9 +124,9 @@ function draw() {
   image(menuButtonLine, 450, 660, 300, 20);
   image(menuButtonLine, 825, 660, 300, 20);
 
-  image(menuButton, 75, buttonHeight1, 300, 80);
-  image(menuButton, 450, buttonHeight2, 300, 80);
-  image(menuButton, 825, buttonHeight3, 300, 80);
+  image(menuButton, 75, buttonHeight[0], 300, 80);
+  image(menuButton, 450, buttonHeight[1], 300, 80);
+  image(menuButton, 825, buttonHeight[2], 300, 80);
   
   image(raceCarGreenWhite, 173, 342, 104, 176);
   image(raceCarBlueWhite, 548, 342, 104, 176);
@@ -138,9 +135,9 @@ function draw() {
   image(buttonNextLine, 1200, 384.375, 100, 15.625);
   image(buttonNext, 1200, 280, 100, 400); 
   
-  text(purchaseTekst, 142, buttonHeight1 + 53);
-  text('Purchase', 517, buttonHeight2 + 53);
-  text('Purchase', 882, buttonHeight3 + 53);
+  text(purchaseTekst[0], 142, buttonHeight[0] + 53);
+  text(purchaseTekst[1], 517, buttonHeight[1] + 53);
+  text(purchaseTekst[2], 882, buttonHeight[2] + 53);
   
 }
 
