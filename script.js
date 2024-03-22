@@ -19,6 +19,7 @@ let menuButton;
 let menuButtonLine;
 var buttonHeight = [600,600,600];
 var purchaseTekst = ['Purchase', 'Purchase', 'Purchase']
+var Money;
 
 function preload(){
   buttonNext = loadImage('buttonnext.png');
@@ -47,6 +48,9 @@ function draw() {
   if(mouseX > 75 && mouseX < 375){
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[0] = 595;
+      if(mouseIsPressed) {
+        purchaseTekst[0] = 'Purchased'
+      }
     }else{
       buttonHeight[0] = 600;
     }
@@ -57,6 +61,9 @@ function draw() {
   if(mouseX > 450 && mouseX < 750){
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[1] = 595;
+      if(mouseIsPressed) {
+        purchaseTekst[1] = 'Purchased'
+      }
     }else{
       buttonHeight[1] = 600;
     }
@@ -67,53 +74,14 @@ function draw() {
   if(mouseX > 825 && mouseX < 1125){
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[2] = 595;
+      if(mouseIsPressed) {
+        purchaseTekst[2] = 'Purchased'
+      }
     }else{
       buttonHeight[2] = 600;
     }
   }else {
     buttonHeight[2] = 600
-  }
-
-  if(mouseX > 75 && mouseX < 375){
-    if (mouseY > 600 && mouseY < 680) {
-      if (mouseIsPressed) {
-        purchaseTekst[0] = 'Purchased';
-      }else{
-        purchaseTekst[0] = 'Purchase';
-      }
-    }else {
-      purchaseTekst[0] = 'Purchase';
-    }
-  } else {
-    purchaseTekst[0] = 'Purchase';
-  }
-
-  if(mouseX > 450 && mouseX < 750){
-    if (mouseY > 600 && mouseY < 680) {
-      if (mouseIsPressed) {
-        purchaseTekst[1] = 'Purchased';
-      }else{
-        purchaseTekst[1] = 'Purchase';
-      }
-    }else {
-      purchaseTekst[1] = 'Purchase';
-    }
-  } else {
-    purchaseTekst[1] = 'Purchase';
-  }
-
-  if(mouseX > 825 && mouseX < 1125){
-    if (mouseY > 600 && mouseY < 680) {
-      if (mouseIsPressed) {
-        purchaseTekst[2] = 'Purchased'
-      }else{
-        purchaseTekst[2] = 'Purchase'
-      }
-    }else {
-      purchaseTekst[2] = 'Purchase'
-    }
-  } else {
-    purchaseTekst[2] = 'Purchase'
   }
 
   image(carBorder, 75, 280, 300, 300);
@@ -138,6 +106,8 @@ function draw() {
   text(purchaseTekst[0], 142, buttonHeight[0] + 53);
   text(purchaseTekst[1], 517, buttonHeight[1] + 53);
   text(purchaseTekst[2], 882, buttonHeight[2] + 53);
+
+  text(money)
   
 }
 
