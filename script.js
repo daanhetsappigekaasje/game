@@ -19,7 +19,8 @@ let menuButton;
 let menuButtonLine;
 let buttonHeight1 = 600;
 let buttonHeight2 = 600;
-let buttonHeight3 = 600
+let buttonHeight3 = 600;
+var purchaseTekst1 = 'Purchase';
 
 
 function preload(){
@@ -76,15 +77,59 @@ function draw() {
     buttonHeight3 = 600
   }
 
+  if(mouseX > 75 && mouseX < 375){
+    if (mouseY > 600 && mouseY < 680) {
+      if (mouseIsPressed) {
+        purchaseTekst1 = 'Purchased';
+      }else{
+        purchaseTekst1 = 'Purchase';
+      }
+    }else {
+      purchaseTekst1 = 'Purchase';
+    }
+  } else {
+    purchaseTekst1 = 'Purchase';
+  }
+
+  if(mouseX > 450 && mouseX < 750){
+    if (mouseY > 600 && mouseY < 680) {
+      if (mouseIsPressed) {
+        purchaseTekst2 = 500;
+      }else{
+        purchaseTekst2 = 600;
+      }
+    }else {
+      purchaseTekst2 = 600
+    }
+  } else {
+    purchaseTekst2 = 600
+  }
+
+  if(mouseX > 825 && mouseX < 1125){
+    if (mouseY > 600 && mouseY < 680) {
+      if (mouseIsPressed) {
+        buttonHeight3 = 500;
+      }else{
+        buttonHeight3 = 600;
+      }
+    }else {
+      buttonHeight3 = 600
+    }
+  } else {
+    buttonHeight3 = 600
+  }
+
   image(carBorder, 75, 280, 300, 300);
   image(carBorder, 450, 280, 300, 300);
   image(carBorder, 825, 280, 300, 300);
 
+  image(menuButtonLine, 75, 660, 300, 20);
+  image(menuButtonLine, 450, 660, 300, 20);
+  image(menuButtonLine, 825, 660, 300, 20);
+
   image(menuButton, 75, buttonHeight1, 300, 80);
   image(menuButton, 450, buttonHeight2, 300, 80);
   image(menuButton, 825, buttonHeight3, 300, 80);
-
-  image(menuButtonLine, 75, 640, 300, 20);
   
   image(raceCarGreenWhite, 173, 342, 104, 176);
   image(raceCarBlueWhite, 548, 342, 104, 176);
@@ -92,13 +137,14 @@ function draw() {
 
   image(buttonNextLine, 1200, 384.375, 100, 15.625);
   image(buttonNext, 1200, 280, 100, 400); 
-  text('Purchase', 142, buttonHeight1 + 53);
+  
+  text(purchaseTekst, 142, buttonHeight1 + 53);
   text('Purchase', 517, buttonHeight2 + 53);
   text('Purchase', 882, buttonHeight3 + 53);
   
 }
 
-
+/* paranmeter, function */ 
 
 
   
