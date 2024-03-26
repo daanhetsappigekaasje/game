@@ -19,8 +19,9 @@ let menuButton;
 let menuButtonLine;
 var buttonHeight = [600,600,600];
 var bigButtonNextHeight = 280;
-var purchaseTekst = ['Purchase', 'Purchase', 'Purchase'];
-var moneyCounter = '10';
+var purchaseTekst = ['20 coins', '40 coins', '70 coins'];
+var totalCoins = 100;
+var moneyCounter = totalCoins;
 var coinPicture;
 
 function preload(){
@@ -52,7 +53,7 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[0] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[0] = 'Purchased';
+        purchaseTekst[0] = 'Selected';
       }
     }else{
       buttonHeight[0] = 600;
@@ -65,7 +66,8 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[1] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[1] = 'Purchased';
+        purchaseTekst[1] = 'Select' 
+        totalCoins - 10
       }
     }else{
       buttonHeight[1] = 600;
@@ -78,7 +80,7 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[2] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[2] = 'Purchased';
+        purchaseTekst[2] = 'Select';
       }
     }else{
       buttonHeight[2] = 600;
@@ -90,6 +92,9 @@ function draw() {
   if(mouseX > 1200 && mouseX < 1300){
     if (mouseY > 280 && mouseY < 680) {
       bigButtonNextHeight = 275;
+      if(mouseIsPressed) {
+        
+      }
     }else{
       bigButtonNextHeight = 280;
     }
@@ -113,12 +118,12 @@ function draw() {
   image(raceCarBlueWhite, 548, 342, 104, 176);
   image(raceCarPinkWhite, 923, 342, 104, 176);
 
-  image(bigButtonNextLine, 1200, 680, 100, 15.625);
+  image(bigButtonNextLine, 1200, 665, 100, 15.625);
   image(bigButtonNext, 1200, bigButtonNextHeight, 100, 400); 
   
-  text(purchaseTekst[0], 142, buttonHeight[0] + 53);
-  text(purchaseTekst[1], 517, buttonHeight[1] + 53);
-  text(purchaseTekst[2], 882, buttonHeight[2] + 53);
+  text(purchaseTekst[0], 155, buttonHeight[0] + 53);
+  text(purchaseTekst[1], 530, buttonHeight[1] + 53);
+  text(purchaseTekst[2], 900, buttonHeight[2] + 53);
 
   text(moneyCounter, 1200, 85);
   image(coinPicture, 1050, 40, 75, 75);
