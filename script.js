@@ -10,26 +10,29 @@
 
 /* border om de auto in de shop*/
 let carBorder;
-let buttonNext;
-let buttonNextLine;
+let bigButtonNext;
+let bigButtonNextLine;
 let raceCarGreenWhite;
 let raceCarBlueWhite;
 let raceCarPinkWhite;
 let menuButton;
 let menuButtonLine;
 var buttonHeight = [600,600,600];
-var purchaseTekst = ['Purchase', 'Purchase', 'Purchase']
-var Money;
+var bigButtonNextHeight = 280;
+var purchaseTekst = ['Purchase', 'Purchase', 'Purchase'];
+var moneyCounter = '10';
+var coinPicture;
 
 function preload(){
-  buttonNext = loadImage('buttonnext.png');
-  buttonNextLine = loadImage('buttonnextline.png');
+  bigButtonNext = loadImage('bignextbutton.png');
+  bigButtonNextLine = loadImage('bignextbuttonline.png');
   menuButton = loadImage('MenuButton.png');
   menuButtonLine = loadImage('MenuButtonLine.png');
   carBorder = loadImage('carborder.png');
   raceCarGreenWhite = loadImage('raceCarGreenWhite.png');
-  raceCarBlueWhite = loadImage('donkerblauw.png')
-  raceCarPinkWhite = loadImage('rozewit.png')
+  raceCarBlueWhite = loadImage('donkerblauw.png');
+  raceCarPinkWhite = loadImage('rozewit.png');
+  coinPicture = loadImage('coinafbeelding.png');
 }
 
 
@@ -49,7 +52,7 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[0] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[0] = 'Purchased'
+        purchaseTekst[0] = 'Purchased';
       }
     }else{
       buttonHeight[0] = 600;
@@ -62,26 +65,36 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[1] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[1] = 'Purchased'
+        purchaseTekst[1] = 'Purchased';
       }
     }else{
       buttonHeight[1] = 600;
     }
   }else {
-    buttonHeight[1] = 600
+    buttonHeight[1] = 600;
   }
 
   if(mouseX > 825 && mouseX < 1125){
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[2] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[2] = 'Purchased'
+        purchaseTekst[2] = 'Purchased';
       }
     }else{
       buttonHeight[2] = 600;
     }
   }else {
-    buttonHeight[2] = 600
+    buttonHeight[2] = 600;
+  }
+
+  if(mouseX > 1200 && mouseX < 1300){
+    if (mouseY > 280 && mouseY < 680) {
+      bigButtonNextHeight = 275;
+    }else{
+      bigButtonNextHeight = 280;
+    }
+  }else {
+    bigButtonNextHeight = 280;
   }
 
   image(carBorder, 75, 280, 300, 300);
@@ -100,14 +113,16 @@ function draw() {
   image(raceCarBlueWhite, 548, 342, 104, 176);
   image(raceCarPinkWhite, 923, 342, 104, 176);
 
-  image(buttonNextLine, 1200, 384.375, 100, 15.625);
-  image(buttonNext, 1200, 280, 100, 400); 
+  image(bigButtonNextLine, 1200, 680, 100, 15.625);
+  image(bigButtonNext, 1200, bigButtonNextHeight, 100, 400); 
   
   text(purchaseTekst[0], 142, buttonHeight[0] + 53);
   text(purchaseTekst[1], 517, buttonHeight[1] + 53);
   text(purchaseTekst[2], 882, buttonHeight[2] + 53);
 
-  text(money)
+  text(moneyCounter, 1200, 85);
+  image(coinPicture, 1050, 40, 75, 75);
+
   
 }
 
