@@ -22,7 +22,7 @@ var coinPicture;
 var buttonHeight = [600,600,600];
 var bigButtonNextHeight = 280;
 var purchased = [20, 40, 70];
-var coins = 20;
+var coins = 200;
 
 function preload(){
   bigButtonNext = loadImage('bignextbutton.png');
