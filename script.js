@@ -17,12 +17,12 @@ let raceCarBlueWhite;
 let raceCarPinkWhite;
 let menuButton;
 let menuButtonLine;
+var coinPicture;
+
 var buttonHeight = [600,600,600];
 var bigButtonNextHeight = 280;
-var purchaseTekst = ['20 coins', '40 coins', '70 coins'];
-var totalCoins = 100;
-var moneyCounter = totalCoins;
-var coinPicture;
+var purchased = [20, 40, 70];
+var coins = 20;
 
 function preload(){
   bigButtonNext = loadImage('bignextbutton.png');
@@ -35,7 +35,6 @@ function preload(){
   raceCarPinkWhite = loadImage('rozewit.png');
   coinPicture = loadImage('coinafbeelding.png');
 }
-
 
 function setup() {
   createCanvas(1344, 960);
@@ -53,7 +52,13 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[0] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[0] = 'Selected';
+        buttonHeight[0] = 600;
+        if(purchased[0] != false && purchased[0] != true) {
+          if(coins-purchased[0] >= 0) {
+            coins -= purchased[0];
+          purchased[0] = false;
+          }
+        }
       }
     }else{
       buttonHeight[0] = 600;
@@ -66,8 +71,13 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[1] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[1] = 'Select' 
-        totalCoins - 10
+        buttonHeight[1] = 600;
+        if(purchased[1] != false && purchased[1] != true) {
+          if(coins-purchased[1] >= 0) {
+            coins -= purchased[1];
+            purchased[1] = false;
+          }
+        }
       }
     }else{
       buttonHeight[1] = 600;
@@ -80,7 +90,13 @@ function draw() {
     if (mouseY > 600 && mouseY < 680) {
       buttonHeight[2] = 595;
       if(mouseIsPressed) {
-        purchaseTekst[2] = 'Select';
+        buttonHeight[2] = 600;
+        if(purchased[2] != false && purchased[2] != true) {
+          if(coins-purchased[2] >= 0) {
+            coins -= purchased[2];
+            purchased[2] = false;
+          }
+        }
       }
     }else{
       buttonHeight[2] = 600;
@@ -88,6 +104,8 @@ function draw() {
   }else {
     buttonHeight[2] = 600;
   }
+
+  
 
   if(mouseX > 1200 && mouseX < 1300){
     if (mouseY > 280 && mouseY < 680) {
@@ -120,17 +138,38 @@ function draw() {
 
   image(bigButtonNextLine, 1200, 665, 100, 15.625);
   image(bigButtonNext, 1200, bigButtonNextHeight, 100, 400); 
-  
-  text(purchaseTekst[0], 155, buttonHeight[0] + 53);
-  text(purchaseTekst[1], 530, buttonHeight[1] + 53);
-  text(purchaseTekst[2], 900, buttonHeight[2] + 53);
 
-  text(moneyCounter, 1200, 85);
+
+  if(purchased[0] != true && purchased[0] != false) {
+    text(purchased[0], 230, buttonHeight[0] + 53);
+    image(coinPicture, 170, buttonHeight[0] + 20, 40, 40);
+  }else if(purchased[0] === false){
+    text('Select', 173, buttonHeight[0] + 53);
+  }
+
+  if(purchased[1] != true && purchased[1] != false) {
+    text(purchased[1], 607, buttonHeight[1] + 53);
+    image(coinPicture, 547, buttonHeight[1] + 20, 40, 40);
+  }else if(purchased[1] === false){
+    text('Select', 550, buttonHeight[1] + 53);
+  }
+  
+  if(purchased[2] != true && purchased[2] != false) {
+    text(purchased[2], 984, buttonHeight[2] + 53);
+    image(coinPicture, 924, buttonHeight[2] + 20, 40, 40);
+  }else if(purchased[2] === false){
+    text('Select', 927, buttonHeight[2] + 53);
+  }
+  
+  push();
+  textSize(50);
+  text(coins, 1150, 95);
   image(coinPicture, 1050, 40, 75, 75);
+  pop();
+  
 
   
 }
-
 /* paranmeter, function */ 
 
 
